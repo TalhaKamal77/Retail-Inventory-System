@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Items</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cash-register"></i> Sell Items</h1>
+            <p>Sell products and manage checkout</p>
+            <a href="inventory.html" class="btn btn-link">Go to Inventory</a>
+        </header>
+        <!-- Currency Selector at the top -->
+        <div style="margin-bottom: 20px;">
+            <label for="currencySelect">Select Currency:</label>
+            <select id="currencySelect">
+                <option value="PKR">PKR</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div class="main-content">
+            <!-- Inventory Table for Selling -->
+            <div class="table-section">
+                <div class="table-header">
+                    <h2><i class="fas fa-list"></i> Available Products</h2>
+                </div>
+                <div class="table-container">
+                    <table id="sellTable" class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Sell</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sellTableBody">
+                            <!-- Items will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="noItemsMessage" class="no-items" style="display: none;">
+                    <i class="fas fa-box-open"></i>
+                    <p>No items available for sale.</p>
+                </div>
+            </div>
+            <!-- Checkout Section -->
+            <div id="checkoutSection" style="margin-top: 40px;">
+                <h2>Checkout</h2>
+                <div id="checkoutList"></div>
+                <div id="checkoutTotal"></div>
+                <button id="downloadInvoiceBtn">Download Invoice (PDF)</button>
+            </div>
+        </div>
+    </div>
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>

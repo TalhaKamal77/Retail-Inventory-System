@@ -5,8 +5,11 @@
     box-sizing: border-box;
 }
 
+/* 1. Google Fonts: Roboto */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #333;
@@ -593,4 +596,98 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
+} 
+
+/* 2. Table Zebra Striping & Low Stock Highlight */
+.inventory-table tbody tr:nth-child(even) {
+    background: #f4f7fb;
+}
+.inventory-table tbody tr.low-stock-row {
+    background: #fff3cd !important;
+}
+
+/* 3. Card Elevation & Section Spacing */
+.main-content, .stats-section, #checkoutSection {
+    margin-bottom: 40px;
+    box-shadow: 0 12px 32px rgba(102,126,234,0.10), 0 1.5px 4px rgba(0,0,0,0.04);
+}
+
+/* 4. Button Glow on Hover */
+.btn-primary:hover, .btn-success:hover {
+    box-shadow: 0 0 8px 2px #667eea44;
+}
+
+/* 5. Checkout Section Card */
+#checkoutSection {
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(102,126,234,0.10);
+    padding: 32px 24px;
+    margin-top: 40px;
+}
+#checkoutSection h2 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+}
+
+/* 6. Sell Button Accent */
+.btn-sell {
+    background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 15px;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+.btn-sell:hover {
+    box-shadow: 0 0 10px 2px #ff980044;
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* 7. Notification Icons */
+.notification.success::before {
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 10px;
+}
+.notification.error::before {
+    content: '\f057';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 10px;
+}
+.notification.info::before {
+    content: '\f05a';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+/* 8. Smoother Transitions */
+.stat-card, .main-content, .btn, #checkoutSection {
+    transition: box-shadow 0.3s, transform 0.2s, background 0.3s;
+}
+
+/* 9. More Padding for Main Content and Checkout */
+.main-content {
+    padding: 32px 24px;
+}
+
+/* 10. Larger Headers and Numbers */
+.header h1, .table-header h2, #checkoutSection h2 {
+    font-size: 2.1rem;
+    letter-spacing: 0.5px;
+}
+.stat-content h3, #checkoutTotal strong {
+    font-size: 2.2rem;
+}
+
+/* Responsive tweaks for new padding */
+@media (max-width: 768px) {
+    .main-content, #checkoutSection {
+        padding: 16px 6px;
+    }
 } 
